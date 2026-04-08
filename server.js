@@ -10,11 +10,7 @@ const app = express();
 // Connect to Database
 connectDB();
 
-// Middleware
-app.use(cors({ 
-  origin: 'https://smart-feedback-client.vercel.app',
-  credentials: true 
-}));
+ // Middleware\nconst allowedOrigins = process.env.CORS_ORIGIN ? process.env.CORS_ORIGIN.split(',') : ['https://smart-feedback-client.vercel.app', 'http://localhost:3000'];\napp.use(cors({ \n  origin: allowedOrigins,\n  credentials: true \n}));\n
 app.use(express.json());
 app.use(express.static('public'));
 

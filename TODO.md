@@ -1,17 +1,19 @@
-# Task Progress: Enhance root route with nice UI
+# Task Progress: Fix CORS for Production (Render)
 
-**Previous (Syntax Fix):**
-- [x] Fixed server.js SyntaxError.
-- [x] Server running, DB connected.
+**Previous:**
+- [x] Syntax/UI fixes.
 
-**Current Task (UI):**
-- [x] Update plan confirmed: Static serving + HTML UI for /.
-- [x] Overwrote server.js: Added path, static('public'), root sendFile.
-- [x] Created public/index.html: Modern responsive UI (gradient bg, cards, endpoints, test button).
-- [x] Cleaned up formatting issues.
+**Current (CORS):**
+- [x] Confirmed plan: Dynamic CORS via env.CORS_ORIGIN.split(',').
+- [x] Updated server.js: allowedOrigins array (Vercel + localhost:3000).
+- [x] Enhanced README.md: Full Render deploy + CORS env instructions.
+- [x] Updated TODO.md.
 
-**Next:**
-- [ ] Restart server (Ctrl+C, node server.js).
-- [ ] Visit http://localhost:5000 for nice UI.
-- [ ] API intact at /api/feedback.
+**Done - Deploy Steps (Render):**
+1. Go to https://dashboard.render.com > your service (smart-feedback-arxx).
+2. Environment tab > Add Variable: Key=`CORS_ORIGIN` Value=`https://smart-feedback-client.vercel.app`
+3. Save → Triggers redeploy.
+4. Test frontend.
+
+Local server ready; restart to apply (Ctrl+C, node server.js).
 
