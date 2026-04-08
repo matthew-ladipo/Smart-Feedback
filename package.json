@@ -1,0 +1,28 @@
+{
+  "name": "smart-feedback",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/matthew-ladipo/Smart-Feedback.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/matthew-ladipo/Smart-Feedback/issues"
+  },
+  "homepage": "https://github.com/matthew-ladipo/Smart-Feedback#readme",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.1",
+    "express": "^5.2.1",
+    "mongoose": "^9.4.1",
+    "nodemon": "^3.1.14",
+    "sentiment": "^5.0.2"
+  }
+}
