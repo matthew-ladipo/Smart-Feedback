@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Feedback API</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 2rem; }
+        header { text-align: center; color: white; margin-bottom: 3rem; }
+        h1 { font-size: 3rem; margin-bottom: 0.5rem; text-shadow: 0 2px 4px rgba(0,0,0,0.3); }
+        .tagline { font-size: 1.2rem; opacity: 0.9; }
+        .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-bottom: 3rem; }
+        .card { background: rgba(255,255,255,0.95); padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); transition: transform 0.3s; }
+        .card:hover { transform: translateY(-5px); }
+        .card h3 { color: #667eea; margin-bottom: 1rem; }
+        .endpoints { background: rgba(255,255,255,0.95); padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
+        .endpoint { display: flex; justify-content: space-between; padding: 1rem 0; border-bottom: 1px solid #eee; }
+        .endpoint:last-child { border-bottom: none; }
+        .method { font-weight: bold; color: #28a745; padding: 0.5rem 1rem; background: #d4edda; border-radius: 5px; }
+        .post { color: #007bff; background: #cce7ff; }
+        .get { color: #17a2b8; background: #d1ecf1; }
+        .demo { text-align: center; margin-top: 3rem; }
+        .demo button { background: #667eea; color: white; border: none; padding: 1rem 2rem; font-size: 1.1rem; border-radius: 50px; cursor: pointer; transition: background 0.3s; }
+        .demo button:hover { background: #5a67d8; }
+        footer { text-align: center; color: white; margin-top: 3rem; opacity: 0.8; }
+        @media (max-width: 768px) { h1 { font-size: 2rem; } .container { padding: 1rem; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🚀 Smart Feedback API</h1>
+            <p class="tagline">Analyze sentiment, store feedback, and gain insights with AI-powered API</p>
+        </header>
+        
+        <section class="features">
+            <div class="card">
+                <h3>🎯 Sentiment Analysis</h3>
+                <p>AI-driven analysis of feedback sentiment - positive, negative, neutral.</p>
+            </div>
+            <div class="card">
+                <h3>📊 Smart Storage</h3>
+                <p>MongoDB-powered storage with full-text search and analytics.</p>
+            </div>
+            <div class="card">
+                <h3>⚡ Fast API</h3>
+                <p>RESTful endpoints optimized for production use.</p>
+            </div>
+        </section>
+        
+        <section class="endpoints">
+            <h2 style="text-align: center; margin-bottom: 2rem; color: #333;">API Endpoints</h2>
+            <div class="endpoint">
+                <span class="method get">GET</span>
+                <span>/api/feedback</span>
+                <span>Get all feedback</span>
+            </div>
+            <div class="endpoint">
+                <span class="method post">POST</span>
+                <span>/api/feedback</span>
+                <span>Create feedback { text: "...", rating: 5 }</span>
+            </div>
+            <div class="endpoint">
+                <span class="method get">GET</span>
+                <span>/api/feedback/:id</span>
+                <span>Get single feedback</span>
+            </div>
+        </section>
+        
+        <div class="demo">
+            <button onclick="testAPI()">Test API Now</button>
+        </div>
+        
+        <footer>
+            <p>&copy; 2024 Smart Feedback. Built with ❤️ and Node.js + Express + MongoDB</p>
+        </footer>
+    </div>
+
+    <script>
+        async function testAPI() {
+            try {
+                const res = await fetch('/api/feedback');
+                const data = await res.json();
+                alert(`API works! Found ${data.length || 0} feedback items.`);
+            } catch (err) {
+                alert('API test failed: ' + err.message);
+            }
+        }
+    </script>
+</body>
+</html>
+
